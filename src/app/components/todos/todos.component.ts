@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css'
 })
-export class TodosComponent {
 
+
+export class TodosComponent {
+  addClicked() {
+    console.log("Add Button clicked");
+  }
 }
+
