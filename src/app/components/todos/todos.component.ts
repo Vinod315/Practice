@@ -9,22 +9,28 @@ import { Component } from '@angular/core';
 
 
 export class TodosComponent {
-   S=" ";
+  S = " ";
 
   addClicked() {
     console.log("Add Button clicked");
-    this.S="Add Button clicked";
+    this.S = "Add Button clicked";
 
   }
 
   deleteClicked() {
     console.log("Delete Button clicked");
-    this.S="Delete Button clicked";
+    this.S = "Delete Button clicked";
   }
 
   updateClicked() {
     console.log("Update  Button clicked");
-    this.S="Update Button clicked";
+    this.S = "Update Button clicked";
+  }
+
+  submitClicked() {
+    console.log("Submit Button Clicked");
+    this.S = "Submit Button clicked";
+
   }
 
 
