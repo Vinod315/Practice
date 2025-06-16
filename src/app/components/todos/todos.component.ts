@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-todos',
   imports: [],
@@ -9,30 +9,30 @@ import { Component } from '@angular/core';
 
 
 export class TodosComponent {
-  S = " ";
+  Str = "";
 
   addClicked() {
     console.log("Add Button clicked");
-    this.S = "Add Button clicked";
+    this.Str = "Add Button clicked";
 
   }
 
   deleteClicked() {
     console.log("Delete Button clicked");
-    this.S = "Delete Button clicked";
+    this.Str = "Delete Button clicked";
   }
 
   updateClicked() {
     console.log("Update  Button clicked");
-    this.S = "Update Button clicked";
+    this.Str = "Update Button clicked";
   }
-
-  submitClicked() {
-    console.log("Submit Button Clicked");
-    this.S = "Submit Button clicked";
-
+  submitClicked(event: Event) {
+    const current = event.target as HTMLTextAreaElement;
+    this.Str=current.value;
+    
+  
   }
-
-
+sub(){
+  console.log(this.Str);
 }
-
+}
