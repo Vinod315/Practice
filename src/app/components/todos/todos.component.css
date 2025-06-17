@@ -1,8 +1,8 @@
-.Main{
+#Main{
 display: flex;
 border-radius: 15px
 }
-.btn{
+#btn{
 
 color: black;
 margin-right:10px;
@@ -10,7 +10,7 @@ border-radius: 15px  ;
 padding:8px;   
 }
 
- .btn:hover{
+ #btn:hover{
     color: antiquewhite;
     background-color: blue;
  }
