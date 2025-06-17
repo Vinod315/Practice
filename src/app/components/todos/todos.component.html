@@ -1,21 +1,23 @@
-<div
-    class="bg-gray-600 w-screen h-screen ">
+<div class="bg-gray-600 w-screen h-screen ">
     <div id="Main" class=" flex flex-row justify-center items-center mt-20">
-        <button  class="bg-green-300 text-black mt-10 rounded-[15px] p-4 hover:bg-blue-400" (click)="addClicked()">Add Task</button>
-        <button class="bg-pink-300 text-black mt-10 rounded-[15px] p-4 hover:bg-blue-400" (click)="updateClicked()">Update Task</button>
-        <button  class="bg-yellow-300 text-black mt-10 rounded-[15px] p-4 hover:bg-blue-400" (click)="deleteClicked()"> Delete Task</button>
+        <button class="bg-green-300 text-black mt-10 rounded-[15px] p-4 hover:bg-blue-400" (click)="addClicked()">Add
+            Task</button>
+        <button class="bg-pink-300 text-black mt-10 rounded-[15px] p-4 hover:bg-blue-400"
+            (click)="updateClicked()">Update Task</button>
+        <button class="bg-yellow-300 text-black mt-10 rounded-[15px] p-4 hover:bg-blue-400" (click)="deleteClicked()">
+            Delete Task</button>
 
     </div>
     <div class="flex flex-col justify-center items-center mt-5">
-    
-            <textarea (input)="submitClicked($event)" rows="2" cols="54" placeholder="Please Type your Task here"
-                class="rounded-tr-xl rounded-bl-xl  bg-green-100"></textarea>
-            <p class="text-center text-white">{{Str }}</p>
-        
-    
-            <button (click)="sub()" class="bg-green-400 text-white py-2 px-10 rounded-[5px] mt-5">Submit</button>
 
-        
+        <textarea (input)="submitClicked($event)" rows="2" cols="54" placeholder="Please Type your Task here"
+            class="rounded-tr-xl rounded-bl-xl  bg-green-100"></textarea>
+
+
+
+        <button (click)="sub()" class="bg-green-400 text-white py-2 px-10 rounded-[5px] mt-5">Submit</button>
+
+        <p class="text-center text-white">{{e}}</p>
     </div>
 
 

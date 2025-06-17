@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-todos',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css'
 })
@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 
 export class TodosComponent {
   Str = "";
-
+  even = " ";
+  e = " ";
   addClicked() {
     console.log("Add Button clicked");
     this.Str = "Add Button clicked";
@@ -28,11 +29,13 @@ export class TodosComponent {
   }
   submitClicked(event: Event) {
     const current = event.target as HTMLTextAreaElement;
-    this.Str=current.value;
-    
-  
+    this.Str = current.value;
+    this.even = this.Str;
+
   }
-sub(){
-  console.log(this.Str);
-}
+  sub() {
+
+    this.e = this.even;
+    console.log("Submit clicked: "+ this.e);
+  }
 }
