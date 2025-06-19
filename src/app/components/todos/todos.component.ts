@@ -1,17 +1,28 @@
-import { Component, NgModule } from '@angular/core';
+import { Component,  inject} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from '../home/home.component';
+import { MyserviceService } from '../../myservice.service';
+
+
+
 @Component({
   selector: 'app-todos',
-  imports: [FormsModule],
+  imports: [FormsModule,HomeComponent],
   templateUrl: './todos.component.html',
-  styleUrl: './todos.component.css'
+  styleUrl: './todos.component.css',
+  
 })
 
 
 export class TodosComponent {
+ 
+  private Myserv=inject(MyserviceService);
+  m=this.Myserv.serv;
+  
   Str = "";
   even = " ";
-  e = " ";
+  e = "";
+
   addClicked() {
     console.log("Add Button clicked");
     this.Str = "Add Button clicked";
@@ -36,6 +47,7 @@ export class TodosComponent {
   sub() {
 
     this.e = this.even;
-    console.log("Submit clicked: "+ this.e);
+    console.log("Submit clicked: " + this.e);
+
   }
 }
