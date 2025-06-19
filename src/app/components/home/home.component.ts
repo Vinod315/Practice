@@ -1,5 +1,5 @@
-import { Component,Input,inject } from '@angular/core';
-import { MyserviceService } from '../../myservice.service';
+import { Component } from '@angular/core';
+import { HelpService } from '../../services/help.service';
 
 
 @Component({
@@ -9,9 +9,16 @@ import { MyserviceService } from '../../myservice.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  private Myserv=inject(MyserviceService);
-  m=this.Myserv.serv;
- @Input() vofHome:any;
- 
+ displayText:string='';
+ constructor(private helpService: HelpService) {}
+
+ ngOnInit() {
+  this.helpService.textInput$.subscribe(text => {
+    this.displayText = text;
+    console.log(this.displayText);
+  });
+ }
+
+
 }
 

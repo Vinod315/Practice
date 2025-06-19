@@ -1,13 +1,12 @@
 import { Component,  inject} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from '../home/home.component';
-import { MyserviceService } from '../../myservice.service';
-
+import { HelpService } from '../../services/help.service';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-todos',
-  imports: [FormsModule,HomeComponent],
+  imports: [FormsModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css',
   
@@ -16,12 +15,14 @@ import { MyserviceService } from '../../myservice.service';
 
 export class TodosComponent {
  
-  private Myserv=inject(MyserviceService);
-  m=this.Myserv.serv;
+  // private Myserv=inject(MyserviceService);
+  // m=this.Myserv.serv;
   
   Str = "";
   even = " ";
   e = "";
+
+  constructor(private helpService: HelpService, private router: Router) {}
 
   addClicked() {
     console.log("Add Button clicked");
@@ -47,6 +48,9 @@ export class TodosComponent {
   sub() {
 
     this.e = this.even;
+    this.helpService.setTextInput(this.e);
+    this.router.navigate(['']);
+
     console.log("Submit clicked: " + this.e);
 
   }
