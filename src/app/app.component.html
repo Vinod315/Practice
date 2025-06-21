@@ -5,11 +5,13 @@
 
 </head>
 <body>
-  <div class="top-bar gap-4 border-b border-gray-200 p-4 flex">
-    <a href="/" class="text-blue-500 border-2 rounded-md p-2" >Home</a>
-    <a href="/todos" class="text-blue-500 border-2 rounded-md p-2">Todos</a>
-    <a href="/settings" class="text-blue-500 border-2 rounded-md p-2">Settings</a>
+
+  <div class="gap-6 border-s border-gray-200 p-5 flex justify-end
+   bg-purple-300 ">
+    <a href="/" class="transform text-blue-500 border-2 border-blue-500 rounded-md p-2  duration-300 hover:translate-y-1 hover:bg-purple-400 hover:text-white " >Home</a>
+    <a href="/todos" class=" transform text-blue-500 border-2 border-blue-500 rounded-md p-2  duration-300 hover:translate-y-1 hover:bg-purple-400 hover:text-white ">Todos</a>
+    <a href="/settings" class="transform text-blue-500 border-2 border-blue-500 rounded-md p-2  duration-300 hover:translate-y-1 hover:bg-purple-400 hover:text-white mr-8 ">Settings</a>
   </div>
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet> 
 </body>
 </html>
