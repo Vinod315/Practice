@@ -4,31 +4,35 @@
         <h1 class="text-green-100 text-2xl font-bold text-center ">Settings</h1>
         <div
             class=" flex flex-col justify-start ml-90 mr-90 mb-30 mt-2 h-150 border-5 border-purple-200 rounded-md bg-white">
-            <div class=" flex justify-center mt-10 ">
+            <div class=" flex justify-start mt-10 ml-15 ">
                 <ul>
                     <P class="font-bold text-blue-400">General</P>
-                    <li class="mt-2 text-black">
+                    <li class="mt-2 text-black flex flex-row">
                         <label for="r1">Add new task on top </label>
-                        <input type="checkbox" id="r1" class=" ml-10">
+                        <input value="isChecked" type="checkbox" id="r1" class=" ml-10"(change)='isChecked($event)'>
+                        <p class="text-green-500 text-solid ml-5">{{value}}</p>
                     </li>
-                    <li class="mt-2 text-black">
+                    <li class="mt-2 text-black flex flex-row">
                         <label for="r1">Move starred tasks to top </label>
-                        <input type="checkbox" id="r1" class=" ml-2">
+                        <input type="checkbox" id="r1" class=" ml-2" (change)="isChecked1($event)">
+                        <p class="text-green-500 text-solid ml-5">{{value1}}</p>
                     </li>
-                    <li class="mt-2 text-black">
+                    <li class="mt-2 text-black flex flex-row">
                         <label for="r1">play completion Sound </label>
-                        <input type="checkbox" id="r1" class=" ml-6">
+                        <input type="checkbox" id="r1" class=" ml-6" (change)="isChecked2($event)">
+                        <p class="text-green-500 text-solid ml-5">{{value2}}</p>
                     </li>
-                    <li class="mt-2 text-black">
+                    <li class="mt-2 text-black flex flex-row">
                         <label for="r1">Give a reminder after 24 hr </label>
-                        <input type="checkbox" id="r1">
+                        <input type="checkbox" id="r1" (change)="isChecked3($event)">
+                        <p class="text-green-500 text-solid ml-5">{{value3}}</p>
                     </li>
                      <li class="mt-2 text-black">
                     <label for="sel">Start of the Week</label>
                     <select value="ischeckedvalue" id="sel" class=" border-2 ml-2  rounded-md" (change)="onSelectChange($event)">
                         <option>System Default</option>
                         <option>Monday</option>
-                        <option>Tuenday</option>
+                        <option>Tuesday</option>
                         <option>Wednesday</option>
                         <option>Thursday</option>
                         <option>Friday</option>
@@ -41,54 +45,32 @@
                 </ul>
             </div>
 
-            <div class=" flex justify-center mt-5 mr-25 ">
+            <div class=" flex justify-start mt-5 ml-15 ">
 
                 <ul >
-                    <P class="font-bold text-blue-400">Theme</P>
+                    <P class="font-bold text-blue-400">Theme   <span class="ml-5 text-green-300"> {{themevalue}}</span> </P>
                     <li class="mt-2 text-black">   
                         <label for="r1">Light Theme </label>
-                        <input type="checkbox" id="r1" class=" ml-10">
+                        <input type="checkbox" id="r1" class=" ml-10" (change)="theme1($event)">
+
                     </li>
                     <li class="mt-2 text-black">
                         <label for="r1">Dark Theme </label>
-                        <input type="checkbox" id="r1" class=" ml-10">
+                        <input type="checkbox" id="r1" class=" ml-10" (change)="theme2($event)">
+
                     </li>
                     <li class="mt-2 text-black">
                         <label for="r1">Default Theme </label>
-                        <input type="checkbox" id="r1" class=" ml-6">
+                        <input type="checkbox" id="r1" class=" ml-6" (change)="theme3($event)">
                     </li>
 
                 </ul>
             </div>
-            <div class=" flex justify-center mt-5 text-blue-400 ">
-                @if(ischeckedvalue === 'Monday'){
-                    <p>Monday</p>
-                }
-                @else if(ischeckedvalue === 'Tuesday'){
-                    <p>Tuesday</p>
-                }
-                @else if(ischeckedvalue === 'Wednesday'){   
-                    <p>Wednesday</p>
-                }
-                @else if(ischeckedvalue === 'Thursday'){
-                    <p>Thursday</p>
-                }
-                @else if(ischeckedvalue === 'Friday'){  
-                    <p>Friday</p>
-                }
-                @else if(ischeckedvalue === 'Saturday'){
-                    <p>Saturday</p>
-                }
-                @else if(ischeckedvalue === 'Sunday'){
-                    <p>Sunday</p>
-                }
-                @else{
-                    <p>System Default</p>
-                }
+            
 
-            </div>
+            
 
-        <div class="text-black text-center text-5xl mt-10 text-bold">{{ischeckedvalue}}</div>
+        
 
 
 
