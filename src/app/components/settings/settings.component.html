@@ -9,22 +9,26 @@
                     <P class="font-bold text-blue-400">General</P>
                     <li class="mt-2 text-black flex flex-row">
                         <label for="r1">Add new task on top </label>
-                        <input value="isChecked" type="checkbox" id="r1" class=" ml-10"(change)='isChecked($event)'>
+                        <input type="checkbox" value="isChecked" class="toggle ml-12"  (change)='isChecked($event)'/>
+                      
                         <p class="text-green-500 text-solid ml-5">{{value}}</p>
                     </li>
                     <li class="mt-2 text-black flex flex-row">
                         <label for="r1">Move starred tasks to top </label>
-                        <input type="checkbox" id="r1" class=" ml-2" (change)="isChecked1($event)">
+                        <input type="checkbox" value="isChecked" class="toggle ml-3"  (change)='isChecked1($event)'/>
+                       
                         <p class="text-green-500 text-solid ml-5">{{value1}}</p>
                     </li>
                     <li class="mt-2 text-black flex flex-row">
                         <label for="r1">play completion Sound </label>
-                        <input type="checkbox" id="r1" class=" ml-6" (change)="isChecked2($event)">
+                        <input type="checkbox" id="r1" value="isChecked" class="toggle ml-7"  (change)='isChecked2($event)'/>
+                       
                         <p class="text-green-500 text-solid ml-5">{{value2}}</p>
                     </li>
                     <li class="mt-2 text-black flex flex-row">
                         <label for="r1">Give a reminder after 24 hr </label>
-                        <input type="checkbox" id="r1" (change)="isChecked3($event)">
+                        <input type="checkbox" id="r1" value="isChecked" class="toggle "  (change)='isChecked3($event)'/>
+                       
                         <p class="text-green-500 text-solid ml-5">{{value3}}</p>
                     </li>
                      <li class="mt-2 text-black">
@@ -51,17 +55,20 @@
                     <P class="font-bold text-blue-400">Theme   <span class="ml-5 text-green-300"> {{themevalue}}</span> </P>
                     <li class="mt-2 text-black">   
                         <label for="r1">Light Theme </label>
-                        <input type="checkbox" id="r1" class=" ml-10" (change)="theme1($event)">
+                        
+                        <input type="checkbox" id="r1" class="toggle ml-10 "  (change)='theme1($event)'/>
 
                     </li>
                     <li class="mt-2 text-black">
                         <label for="r1">Dark Theme </label>
-                        <input type="checkbox" id="r1" class=" ml-10" (change)="theme2($event)">
+                        
+                        <input type="checkbox" id="r1" class="toggle ml-10 "  (change)='theme2($event)'/>
 
                     </li>
                     <li class="mt-2 text-black">
                         <label for="r1">Default Theme </label>
-                        <input type="checkbox" id="r1" class=" ml-6" (change)="theme3($event)">
+                        <input type="checkbox" id="r1" class="toggle ml-6 "  (change)='theme1($event)'/>
+                        
                     </li>
 
                 </ul>

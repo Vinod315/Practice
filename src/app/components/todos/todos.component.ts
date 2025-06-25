@@ -23,6 +23,7 @@ export class TodosComponent {
   e = "";
 
   constructor(private helpService: HelpService, private router: Router) {}
+  taskArray=[];
 
   addClicked() {
     console.log("Add Button clicked");
