@@ -2,11 +2,11 @@ import { Component,  inject} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HelpService } from '../../services/help.service';
 import { Router } from '@angular/router';
-
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-todos',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css',
   
@@ -15,19 +15,29 @@ import { Router } from '@angular/router';
 
 export class TodosComponent {
  
-  // private Myserv=inject(MyserviceService);
-  // m=this.Myserv.serv;
+  task:string[]=[];
+  newTask="";
   
   Str = "";
   even = " ";
   e = "";
 
   constructor(private helpService: HelpService, private router: Router) {}
-  taskArray=[];
+ngOnINit(){
+  const savedTasks=localStorage.getItem('tasks');
+  if(savedTasks){
+    this.task=JSON.parse(savedTasks)
+  }
+}
 
-  addClicked() {
-    console.log("Add Button clicked");
-    this.Str = "Add Button clicked";
+  addClicked(t:any){
+
+   
+    this.newTask=t;
+    console.log(this.newTask)
+    this.task.push(this.newTask);
+     localStorage.setItem('task',JSON.stringify(this.task));
+    
 
   }
 

@@ -23,18 +23,35 @@ export class SettingsComponent {
 
   //Event for Checkbox 
 
-  isChecked(event: Event) {
+  isCheckedA1(event: Event) {
     const Element = event.target as HTMLInputElement;
     this.Checked = Element.checked;
+    
+    this.value = this.Checked ? " " : " ";
+   
+
+  }
+
+  isCheckedB1(event: Event) {
+    const Element = event.target as HTMLInputElement;
+    this.Checked = Element.checked;
+    
     this.value = this.Checked ? "New Task Will Add On Top " : " ";
-    console.log(this.Checked);
+   
 
   }
 
 
   //Event for Checkbox 1
 
-  isChecked1(event: Event) {
+  isCheckedA2(event: Event) {
+    const Element = event.target as HTMLInputElement;
+    this.Checked1 = Element.checked;
+    this.value1 = this.Checked1 ? " " : " ";
+    console.log(this.Checked);
+
+  }
+  isCheckedB2(event: Event) {
     const Element = event.target as HTMLInputElement;
     this.Checked1 = Element.checked;
     this.value1 = this.Checked1 ? "Starred Aasks Assigned At Top " : " ";
@@ -42,13 +59,23 @@ export class SettingsComponent {
 
   }
 
+
   //Event for Checkbox 2
 
-  isChecked2(event: Event) {
+
+  
+  isCheckedA3(event: Event) {
     const Element = event.target as HTMLInputElement;
     this.Checked2 = Element.checked;
-    this.value2 = this.Checked2 ? " Task Completion Sound Added " : " ";
-    console.log(this.Checked2);
+    this.value2 = this.Checked2 ? " " : " ";
+    console.log(this.Checked);
+
+  }
+  isCheckedB3(event: Event) {
+    const Element = event.target as HTMLInputElement;
+    this.Checked2 = Element.checked;
+    this.value2 = this.Checked2 ? "Task Completion Sound Added " : " ";
+    console.log(this.Checked);
 
   }
 
@@ -60,6 +87,21 @@ export class SettingsComponent {
     this.Checked3 = Element.checked;
     this.value3 = this.Checked3 ? "Reminder - After 24 Hours " : " ";
     console.log(this.Checked3);
+
+  }
+  
+  isCheckedA4(event: Event) {
+    const Element = event.target as HTMLInputElement;
+    this.Checked3 = Element.checked;
+    this.value3 = this.Checked3 ? " " : " ";
+    console.log(this.Checked);
+
+  }
+  isCheckedB4(event: Event) {
+    const Element = event.target as HTMLInputElement;
+    this.Checked3 = Element.checked;
+    this.value3 = this.Checked3 ? "Reminder After-24 hr " : " ";
+    console.log(this.Checked);
 
   }
 
