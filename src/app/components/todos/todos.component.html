@@ -3,7 +3,7 @@
   <div id="Main" class=" flex flex-row justify-center items-center mr-5  ">
 
     <button class="bg-pink-300 text-black  mt-15 mr-3 rounded-[15px] p-4 hover:bg-blue-400"
-      (click)="updateClicked()">Update Task</button>
+      (click)="updateClicked()">Task's Count</button>
     <button class="bg-yellow-300 text-black mt-15 mr-3 rounded-[15px] p-4 hover:bg-blue-400" (click)="deleteClicked()">
       Delete Task</button>
 
@@ -29,10 +29,14 @@
     </div>
     </div>
     
+@if(countVisible===true){
+  <P class="text-white font-bold mt-5 text-xl ">Number of tasks  :  {{count()}}</P>
+}
+
 
   </div>
-
 
 </div>
 <p class="text-center text-white">{{e}}</p>
 <!-- <app-home [vofHome]="displayText"></app-home> -->
+

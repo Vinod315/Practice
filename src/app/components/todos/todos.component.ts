@@ -1,4 +1,4 @@
-import { Component,  inject} from '@angular/core';
+import { Component,  inject, signal} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HelpService } from '../../services/help.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common';
 
 
 export class TodosComponent {
+  countVisible:boolean=false;
+  count=signal(0);
+
  
   task:string[]=[];
   newTask="";
@@ -35,6 +38,7 @@ ngOnINit(){
    
     this.newTask=t;
     console.log(this.newTask)
+    this.count.update((value) =>value+1);
     this.task.push(this.newTask);
      localStorage.setItem('task',JSON.stringify(this.task));
     
@@ -48,7 +52,7 @@ ngOnINit(){
 
   updateClicked() {
     console.log("Update  Button clicked");
-    this.Str = "Update Button clicked";
+    this.countVisible =true;
   }
   submitClicked(event: Event) {
     const current = event.target as HTMLTextAreaElement;

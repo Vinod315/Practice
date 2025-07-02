@@ -1,11 +1,58 @@
-<div class="bg-gray-600 w-screen h-screen">
+<div class="bg-gray-600  h-screen">
 
     <div class="text-white  rounded-[5px] p-8 text-center underline">
         <a href="/todos"> Click Me For Todo's Application</a>
 
 
-        <p class="text-center text-white">{{displayText}}</p>
+        <p class="text-center text-white ">{{displayText}}</p>
+      <div class="flex flex-row justify-center pt-3">
+        <button class=" bg-blue-400 rounded-xl mr-5 p-2" (click)="register()">Register</button>
+        <button class="bg-green-400 rounded-xl p-2" (click)="login()">Login</button>
+      </div>
+      
+@if(visible===true){
+    <div class="relative flex flex-col rounded-xl justify-center bg-yellow-100 mt-5 z-2">
+    <div class="p-5">
+       <label for="user" class="text-black mt-5" >Username</label>
+       <input  id='user' type="text" placeholder="Enter User Name"  class=" relative   bg-blue-400 rounded-sm ml-15 mb-2" [(ngModel)]="Name"/>
 
+       <br>
+
+       <label for="password" class="text-black mt-5">password</label>
+       <input  id='password' type="text" placeholder="Enter Password" class=" relative ml-4 bg-blue-400 rounded-sm ml-17 mb-2 " [(ngModel)]="Password"/>
+       <br>
+      
+        <button class=" m-3 p-2 bg-blue-400 rounded-sm" (click)="showlog()">Submit</button>
+    </div>
+    </div>}
+
+@if(RegisterVisible===true){
+    <div class="relative flex flex-col rounded-xl justify-center bg-yellow-100 mt-5 z-19">
+    <div class="p-5">
+       <label for="user" class="text-black mt-5" >Username</label>
+       <input  id='user' type="text" placeholder="Enter User Name"  class=" relative   bg-blue-400 rounded-sm ml-15 mb-2" [(ngModel)]="Name"/>
+
+       <br>
+
+       <label for="password" class="text-black mt-5">password</label>
+       <input  id='password' type="text" placeholder="Enter Password" class=" relative ml-4 bg-blue-400 rounded-sm ml-17 mb-2 " [(ngModel)]="Password"/>
+       <br>
+       <label for="E-mail" class="text-black mt-1" >E-mail</label>
+       <input  id='E-mail' type="text" placeholder="Enter E-mail Id"  class="relative  bg-blue-400 rounded-sm  ml-22 mb-2 " [(ngModel)]="Email"/>
+
+       <br>
+
+       <label for="number" class="relative  text-black ">Mobile-Number</label>
+       <input  id='number' type="number" placeholder="Enter Mobile Number" class="relative  ml-4 bg-blue-400 rounded-sm ml-1 " [(ngModel)]="Number"/>
+       <br>
+
+        <button class=" m-3 p-2 bg-blue-400 rounded-sm" (click)="showReg()">Submit</button>
+    </div>
+   
+
+</div>
+
+}
         
 
     </div>
