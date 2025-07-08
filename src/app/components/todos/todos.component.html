@@ -3,18 +3,18 @@
   <div id="Main" class=" flex flex-row justify-center items-center mr-5  ">
 
     <button class="bg-pink-300 text-black  mt-15 mr-3 rounded-[15px] p-4 hover:bg-blue-400"
-      (click)="updateClicked()">Task's Count</button>
+      (click)="countCheck()">Task's Count</button>
     <button class="bg-yellow-300 text-black mt-15 mr-3 rounded-[15px] p-4 hover:bg-blue-400" (click)="deleteClicked()">
       Delete Task</button>
 
   </div>
   <div class="flex flex-col justify-center items-center  ">
 
-    <div class="max-w-xl mx-auto mt-5 p-6 bg-white shadow-xl rounded-2xl">
-      <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">📝 Add Your Task</h2>
+    <div class="w-xl mx-auto mt-5 p-6 bg-white shadow-xl rounded-2xl">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center">📝 Add Your Task Here ...</h2>
 
-      <div  class="flex flex-col sm:flex-row items-center gap-4 max-w-xl">
-        <textarea #taskInput rows="2" placeholder="Please type your task here..."
+      <div class="flex flex-col sm:flex-row items-center gap-4 max-w-xl">
+        <textarea #taskInput rows="2" value=" " placeholder="Please type your task here..."
           class="flex-grow w-full sm:w-auto p-3 rounded-2xl bg-green-100 border border-yellow-800 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-200 resize-none"></textarea>
 
         <button (click)="addClicked(taskInput.value)"
@@ -22,21 +22,21 @@
           Add Task
         </button>
       </div>
-      <div clas="flex flex-col  justify-center items-center">
-   
-      <div *ngFor=" let I of task" c>   <p class="text-green-400 mt-1 bg-gray-600 rounded-xl">{{I}}</p></div>
-   
+      <div class="w-auto">
+
+        <div *ngFor="let task of tasks" >
+          <p class="text-white mt-1 bg-gray-600 rounded-sm">{{task}}</p>
+        </div>
+
+      </div>
     </div>
-    </div>
-    
-@if(countVisible===true){
-  <P class="text-white font-bold mt-5 text-xl ">Number of tasks  :  {{count()}}</P>
-}
+
+    @if(countVisible===true){
+    <P class="text-white font-bold mt-5 text-xl ">Number of tasks : {{count()}} </P>
+    }
 
 
   </div>
 
 </div>
 <p class="text-center text-white">{{e}}</p>
-<!-- <app-home [vofHome]="displayText"></app-home> -->
-

@@ -1,58 +1,78 @@
-import { Component,  inject, signal} from '@angular/core';
+import { Component, signal, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HelpService } from '../../services/help.service';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-todos',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css',
-  
+
 })
 
 
 export class TodosComponent {
-  countVisible:boolean=false;
-  count=signal(0);
+  countVisible: boolean = false;
+  count = signal(0);
+  el: boolean = false;
 
- 
-  task:string[]=[];
-  newTask="";
-  
+  tasks: string[] = [];
+  newTask = "";
+
   Str = "";
   even = " ";
   e = "";
 
-  constructor(private helpService: HelpService, private router: Router) {}
-ngOnINit(){
-  const savedTasks=localStorage.getItem('tasks');
-  if(savedTasks){
-    this.task=JSON.parse(savedTasks)
+  constructor(private helpService: HelpService, private router: Router) { }
+  ngOnINit() {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      this.tasks = JSON.parse(savedTasks)
+    }
   }
-}
 
-  addClicked(t:any){
+  addClicked(task: any) {
 
-   
-    this.newTask=t;
-    console.log(this.newTask)
-    this.count.update((value) =>value+1);
-    this.task.push(this.newTask);
-     localStorage.setItem('task',JSON.stringify(this.task));
-    
+
+    this.newTask = task;
+    if (this.newTask.trim()!== "") {
+      this.el = this.tasks.includes(this.newTask);
+      if (this.el === false) {
+
+        this.count.update((value) => value + 1);
+        this.tasks.push(this.newTask);
+        console.log("If block");
+      } else if (this.el) {
+        console.log("neasted else block");
+        alert("This task already added in the TODO'S");
+
+      }
+
+      //  localStorage.setItem('task',JSON.stringify(this.task));
+      // this.newTask=" ";
+    }
+    else {
+      console.log("else block");
+      alert("Task can not be Empty");
+    }
+
+
 
   }
 
   deleteClicked() {
+    this.tasks.push();
     console.log("Delete Button clicked");
     this.Str = "Delete Button clicked";
   }
 
-  updateClicked() {
-    console.log("Update  Button clicked");
-    this.countVisible =true;
+  countCheck() {
+    console.log("countCheck  Button clicked");
+    this.countVisible = true;
   }
   submitClicked(event: Event) {
     const current = event.target as HTMLTextAreaElement;
