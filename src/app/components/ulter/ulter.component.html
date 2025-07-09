@@ -1,18 +1,53 @@
-<div class="bg-gray-600 h-screen w-sreen">
-  
-    <div   *ngIf="UlterVisible" class="flex flex-row justify-start ">
-        <div class=" mt-40 pl-40 text-shadow-green-100">
-            <h1 class="text-green-100 text-2xl not-italic">"To tackle your tasks efficiently and accurately."</h1>
-            <p class="italic text-4xl text-white font-mono m-5 font-bold">Welcome to your productivity hub!</p>
-            <p class="text-lg text-white">The Home screen is the central dashboard of your To-Dos application,<br>
-                designed to give you a clear and organized view of your daily tasks and priorities.</p>
+<div class="bg-gray-600 h-screen w-screen text-shadow-yellow-100 flex items-start justify-start">
 
-            <button class="bg-green-100 mt-10 p-4 rounded-lg italic font-bold text-purple-800">Get Started </button>
-        </div>
+  <!-- TEXT BLOCK -->
+  <div
+    [ngClass]="{
+      'translate-y-0 opacity-100': UlterVisible,
+      'translate-y-10 opacity-0': !UlterVisible
+    }"
+    class="transition-all duration-1000 ease-out transform mt-40 pl-40 text-shadow-green-100"
+  >
+    <h1   [ngClass]="{
+      'translate-y-0 opacity-100': UlterVisible,
+      'translate-y-20 opacity-0': !UlterVisible
+    }"
+    class="transition-all duration-1000 ease-out transform  text-shadow-green-100 text-green-100 text-2xl not-italic">
+      "To tackle your tasks efficiently and accurately."
+    </h1>
+    <p [ngClass]="{
+      'translate-y-0 opacity-100': UlterVisible,
+      'translate-y-30 opacity-0': !UlterVisible
+    }"
+    class="transition-all duration-1500 ease-out transform mt-5  text-shadow-green-100 italic text-4xl text-white font-mono  font-bold">
+      Welcome to your productivity hub!
+    </p>
+    <p [ngClass]="{
+      'translate-y-0 opacity-100 ': UlterVisible,
+      'translate-y-60 opacity-0 ': !UlterVisible
+    }"
+    class="transition-all duration-1500 ease-out transform mt-4 text-white  text-shadow-green-100 text-lg ">
+      The Home screen is the central dashboard of your To-Dos application,<br />
+      designed to give you a clear and organized view of your daily tasks and priorities.
+    </p>
+    <button  [ngClass]="{
+      'translate-y-0 opacity-100': UlterVisible,
+      'translate-y-80 opacity-0': !UlterVisible
+    }"
+    class="transition-all duration-1500 ease-out transform mt-5 text-shadow-green-100 bg-green-100  p-4 rounded-lg italic font-bold text-purple-800">
+      <a href="/todos">Get Started</a>
+    </button>
+  </div>
 
-        <div class=" mt-40 pl-20 text-green-100 ">
-            <img src="assets/images/to.png" alt="Image of todos " class="rounded-lg  ">
-        </div>
-    </div>
+  <!-- IMAGE BLOCK -->
+  <div
+    [ngClass]="{
+      'translate-y-0 opacity-100': UlterVisible,
+      'translate-y-80 opacity-0': !UlterVisible
+    }"
+    class="transition-all duration-2000 ease-out transform delay-300 mt-40 ml-10"
+  >
+    <img src="assets/images/to.png" alt="Todos image" class="w-96 h-auto rounded-lg shadow-lg" />
+  </div>
 
 </div>

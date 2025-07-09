@@ -8,14 +8,18 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './ulter.component.html',
   styleUrl: './ulter.component.css'
 })
-export class UlterComponent {
-  UlterVisible:boolean=false;
-  ngOnInit(): void {
-  window.addEventListener('focus', () => {
-    this.UlterVisible = true;
-  });
+
+export class UlterComponent  {
+  UlterVisible = false;
+
+  ngOnInit(){
+    // Trigger animation after component is rendered
+    setTimeout(() => {
+      this.UlterVisible = true;
+    }, 200); // Slight delay so Tailwind can animate
+  }
 }
+
 
   
 
-}
